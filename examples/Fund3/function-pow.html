@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p></p>
+
+    <script>
+        function calcPow(x, n) {
+            return x ** n;
+        }
+
+        let numCheck = true;
+        let num;
+
+        while (numCheck) {
+            num = prompt("Please, inser the base number:", "X");
+            numCheck = isNaN(num);
+        }
+
+        let expCheck = true;
+        let exp;
+
+        while (expCheck) {
+            exp = prompt("Please, inser the exponential number:", "X");
+            expCheck = isNaN(exp);
+        }
+
+    
+        let para = document.querySelector('p');
+        para.textContent=calcPow(num,exp);
+
+
+    </script>
+</body>
+
+</html>
