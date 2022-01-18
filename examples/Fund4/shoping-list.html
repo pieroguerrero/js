@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+        li {
+            margin-bottom: 10px;
+        }
+
+        li button {
+            font-size: 8px;
+            margin-left: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+        <label for="item">Enter a new item:</label>
+        <input type="text" name="item" id="item">
+        <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+        const ul = document.querySelector("ul");
+        const inputEnterItem = document.querySelector("input");
+        const buttonAddItem = document.querySelector("button");
+
+        function addItemToShoppingList() {
+
+            let itemToAdd = inputEnterItem.value;
+
+            if ((itemToAdd.length > 0) && (itemToAdd !== "Invalid input!")) {
+
+                inputEnterItem.value = "";
+
+                const liItem = document.createElement("li");
+                const span = document.createElement("span");
+                const buttonItemAction = document.createElement("button");
+
+                liItem.appendChild(span);
+                liItem.appendChild(buttonItemAction);
+
+                span.textContent = itemToAdd;
+                buttonItemAction.textContent = "Delete";
+
+                ul.appendChild(liItem);
+
+                buttonItemAction.addEventListener("click", () => {
+                    buttonItemAction.parentElement.remove();
+                });
+
+                inputEnterItem.focus();
+            } else {
+                inputEnterItem.value = "Invalid input!"
+            }
+
+        }
+
+        buttonAddItem.addEventListener("click", addItemToShoppingList);
+
+    </script>
+</body>
+
+</html>
