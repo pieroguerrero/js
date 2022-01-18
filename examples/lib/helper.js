@@ -56,11 +56,11 @@ function getFizzBuzz(n) {
         // return (nFizzBuzz.length > 0) ? nFizzBuzz : n.toString();
 
         if (n % 3 === 0 && n % 5 === 0) {
-            return nFizzBuzz="FizzBuzz";
+            return nFizzBuzz = "FizzBuzz";
         } else if (n % 3 === 0) {
-            return nFizzBuzz="Fizz";
+            return nFizzBuzz = "Fizz";
         } else if (n % 5 === 0) {
-            return nFizzBuzz="Buzz";
+            return nFizzBuzz = "Buzz";
         } else {
             return n.toString()
         }
