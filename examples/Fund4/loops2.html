@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Loops: Task 2</title>
+    <style>
+        p {
+            color: purple;
+            margin: 0.5em 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+
+    <label for="person-name">Enter the person name to search:</label>
+    <input type="text" name="person-name" id="person-name">
+    <button>Search</button>
+    <section class="preview">
+
+
+
+    </section>
+
+</body>
+<script>
+
+
+    const phonebook = [
+        { name: 'Chris', number: '1549' },
+        { name: 'Li Kang', number: '9634' },
+        { name: 'Anne', number: '9065' },
+        { name: 'Francesca', number: '3001' },
+        { name: 'Mustafa', number: '6888' },
+        { name: 'Tina', number: '4312' },
+        { name: 'Bert', number: '7780' },
+        { name: 'Jada', number: '2282' },
+    ]
+
+    function nameSearch(name) {
+
+        let result = "'" + name + "'" + " was not found in the phonebook.";
+        for (let i = 0; i < phonebook.length; i++) {
+            let objPerson = phonebook[i];
+            if (objPerson.name.toUpperCase() === name.toUpperCase()) {
+                result = objPerson.name + ": " + objPerson.number;
+                break;
+            }
+        }
+
+        return result;
+
+    }
+
+    function nameSearch2(name) {
+
+        let objPersona = phonebook.find((objPerson) => {
+            if (objPerson.name.toUpperCase() === name.toUpperCase()) {
+                return objPerson;
+            }
+        });
+
+        if (objPersona) {
+            return objPersona.name + ": " + objPersona.number;
+        } else {
+            return "'" + name + "'" + " was not found in the phonebook.";
+        }
+
+    }
+
+
+    const inputName = document.querySelector('input');
+
+    function mouseSearch() {
+        if (inputName.value) {
+
+            let result = nameSearch(inputName.value);
+            inputName.value = "";
+
+            const section = document.querySelector('section');
+
+            const para = document.createElement('p');
+            para.textContent = result;
+
+            section.appendChild(para);
+
+            inputName.focus();
+        }
+    }
+
+    const buttonSearch = document.querySelector("button");
+    buttonSearch.addEventListener("click", mouseSearch);
+
+
+
+
+
+
+
+    // Add your code here
+
+    // Don't edit the code below here!
+
+</script>
+
+</html>
