@@ -43,6 +43,7 @@
         { name: 'Jada', number: '2282' },
     ]
 
+    //search a name in an array and return a string with the name and the phone number
     function nameSearch(name) {
 
         let result = "'" + name + "'" + " was not found in the phonebook.";
@@ -58,6 +59,7 @@
 
     }
 
+    //search a name in an array and return a string with the name and the phone number
     function nameSearch2(name) {
 
         let objPersona = phonebook.find((objPerson) => {
@@ -77,6 +79,7 @@
 
     const inputName = document.querySelector('input');
 
+    //gets the user input to be search in the phonebook and then prints the search results in the UI
     function mouseSearch() {
         if (inputName.value) {
 
