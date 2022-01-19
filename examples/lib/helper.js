@@ -67,3 +67,27 @@ function getFizzBuzz(n) {
 
     } else return;
 }
+
+//Get a string reversed:
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+reverseString("hello");
+
+//Remove element from an array and returns a new array with the new values:
+
+function removeFromArray(arr, value) {
+
+    arr = arr.filter((element) => {
+        return element !== value
+    });
+
+    return arr;
+}
+
+//Determine if a given year is leap or not:
+function leapYears(year) {
+    if ((year % 400 === 0) || ((year % 4 === 0) && (year % 100 !== 0))) {
+        return true;
+    } else return false;
+};
