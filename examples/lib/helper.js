@@ -43,7 +43,7 @@ function getCapitalizedWord(text = "") {
 function getFizzBuzz(n) {
     if (Number.isInteger(n)) {
 
-        // let nFizzBuzz = "";
+        let nFizzBuzz = "";
 
         // if (n % 3 === 0) {
         //     nFizzBuzz = "Fizz";
@@ -91,3 +91,31 @@ function leapYears(year) {
         return true;
     } else return false;
 };
+
+
+//Grouping objects by a given property:
+function groupBy(objectArray, property) {
+    return objectArray.reduce(function (acc, obj) {
+        let key = obj[property]
+        if (!acc[key]) {
+            acc[key] = []
+        }
+        acc[key].push(obj)
+        return acc
+    }, {});
+}
+
+//Counting instances of values in an object:
+let names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
+
+let countedNames = names.reduce(function (allNames, name) {
+    if (name in allNames) {
+        allNames[name]++
+    }
+    else {
+        allNames[name] = 1
+    }
+    return allNames
+}, {})
+// countedNames is:
+// { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
